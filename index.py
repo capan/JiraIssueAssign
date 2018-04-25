@@ -35,7 +35,7 @@ props = jira.application_properties()
 all_closed_issues = jira.search_issues(
     'resolution in (Çözüldü, "Daha Sonra Çözülecek" ,"İptal Edildi" ,Mükerrer ,"Yeniden Tekrarlanamadı" , "İptal Edildi") and assignee is not EMPTY  order by createdDate  asc', maxResults=False
 )
-i = 0
+
 for i in range(0, len(all_closed_issues)):
 
     train.append((str(all_closed_issues[i].key.split('-')[0]) + ' ' + str(
